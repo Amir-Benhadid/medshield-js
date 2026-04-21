@@ -31,3 +31,11 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Generate Summary
+        if: always()
+        run: |
+          echo "### CI Report" >> $GITHUB_STEP_SUMMARY
+          echo "| Node.js Version | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-----------------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| ${{ matrix.node-version }} | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
