@@ -1,8 +1,8 @@
-import { LayerProcessor, SanitizerOptions, ProcessedResult, DetectionResult } from '@/types';
-import { RegexLayer } from '@/layers/regexLayer';
-import { NERLayer } from '@/layers/nerLayers';
-import { MedicalLayer } from '@/layers/medicalLayer';
-import { TokenVault } from '@/utils/tokenVault';
+import { LayerProcessor, SanitizerOptions, ProcessedResult, DetectionResult } from '../types';
+import { RegexLayer } from '../layers/regexLayer';
+import { NERLayer } from '../layers/nerLayers';
+import { MedicalLayer } from '../layers/medicalLayer';
+import { TokenVault } from '../utils/tokenVault';
 
 /**
  * Synthesizer: The core engine of MedShield-JS.

@@ -1,14 +1,22 @@
 {
-  "name": "medshield",
+  "name": "@Amir-Benhadid/medshield-js",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "Privacy-first PII/PHI sanitization for Medical AI Agents.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "bin": {
     "medshield-mcp": "./dist/mcp/server.js"
   },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup src/index.ts src/mcp/server.ts --format cjs,esm --clean && tsc --emitDeclarationOnly --declaration --outDir dist",
+    "prepublishOnly": "npm run build",
     "start": "node dist/index.js",
     "test": "tsx --test test/*.test.ts"
   },
@@ -20,13 +28,15 @@
     "sanitization",
     "hipaa",
     "nlp",
-    "ai"
+    "ai",
+    "mcp",
+    "agentic"
   ],
-  "author": "MedShield-JS Team",
+  "author": "Amir-Benhadid",
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "^25.6.0",
-    "tsup": "^8.5.1",
+    "tsup": "^8.3.0",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3"
   },

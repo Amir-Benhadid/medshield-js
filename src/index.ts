@@ -1,5 +1,5 @@
-import { SanitizerOptions, ProcessedResult, SensitivityLevel } from '@/types';
-import { Synthesizer } from '@/utils/synthesizer';
+import { SanitizerOptions, ProcessedResult, SensitivityLevel } from './types';
+import { Synthesizer } from './utils/synthesizer';
 
 /**
  * The primary entry point for the MedShield-JS library.
@@ -45,7 +45,7 @@ export const sanitize = (text: string, options?: SanitizerOptions): string => {
 };
 
 // --- Agentic SDK Integrations ---
-export { OpenAIMedShieldMiddleware } from '@/integrations/openai';
-export { LangChainMedShieldMiddleware } from '@/integrations/langchain';
-export { VercelAIMedShieldMiddleware } from '@/integrations/vercel';
+export { OpenAIMedShieldMiddleware } from './integrations/openai';
+export { LangChainMedShieldMiddleware } from './integrations/langchain';
+export { VercelAIMedShieldMiddleware } from './integrations/vercel';
 

@@ -1,5 +1,5 @@
-import { SanitizerOptions } from '@/types';
-import { Sanitizer } from '@/index';
+import { SanitizerOptions } from '../types';
+import { Sanitizer } from '../index';
 
 /**
  * Middleware wrapper for Vercel AI SDK.

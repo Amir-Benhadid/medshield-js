@@ -1,7 +1,7 @@
 import nlp from 'compromise';
-import { SanitizerOptions, LayerProcessor, ProcessedResult, DetectionResult } from "@/types";
+import { SanitizerOptions, LayerProcessor, ProcessedResult, DetectionResult } from "../types";
 import { faker } from "@faker-js/faker";
-import type { TokenVault } from "@/utils/tokenVault";
+import type { TokenVault } from "../utils/tokenVault";
 
 /**
  * NERLayer: Named Entity Recognition Layer.

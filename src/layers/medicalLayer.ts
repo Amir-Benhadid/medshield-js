@@ -1,5 +1,5 @@
-import { SanitizerOptions, LayerProcessor, ProcessedResult, DetectionResult } from "@/types";
-import type { TokenVault } from "@/utils/tokenVault";
+import { SanitizerOptions, LayerProcessor, ProcessedResult, DetectionResult } from "../types";
+import type { TokenVault } from "../utils/tokenVault";
 
 /**
  * MedicalLayer: Identifies healthcare-specific terminology.

@@ -5,7 +5,7 @@ import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
-import { Sanitizer } from "@/index";
+import { Sanitizer } from "../index";
 
 // Initialize MedShield components
 const sanitizer = new Sanitizer({ level: 'SYNTHESIZE', deterministic: true, preserveMedicalContext: true });

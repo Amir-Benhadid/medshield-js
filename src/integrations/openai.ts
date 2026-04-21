@@ -1,5 +1,5 @@
-import { SanitizerOptions, ProcessedResult } from '@/types';
-import { Sanitizer } from '@/index';
+import { SanitizerOptions, ProcessedResult } from '../types';
+import { Sanitizer } from '../index';
 
 /**
  * Middleware wrapper for the official OpenAI Node.js SDK.

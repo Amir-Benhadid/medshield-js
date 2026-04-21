@@ -1,7 +1,7 @@
-import { PII_PATTERNS } from "@/constants/patterns";
-import { SanitizerOptions, LayerProcessor, ProcessedResult, DetectionResult } from "@/types";
+import { PII_PATTERNS } from "../constants/patterns";
+import { SanitizerOptions, LayerProcessor, ProcessedResult, DetectionResult } from "../types";
 import { faker } from "@faker-js/faker";
-import type { TokenVault } from "@/utils/tokenVault";
+import type { TokenVault } from "../utils/tokenVault";
 
 /**
  * RegexLayer: The first layer of defense.
