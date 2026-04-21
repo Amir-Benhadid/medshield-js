@@ -30,7 +30,8 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: npm test
+        id: run_tests
+        run: npm test | tee test-output.txt
 
       - name: Generate Summary
         if: always()
@@ -38,4 +39,16 @@ jobs:
           echo "### CI Report" >> $GITHUB_STEP_SUMMARY
           echo "| Node.js Version | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|-----------------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| ${{ matrix.node-version }} | ${{ job.status }} |" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "| ${{ matrix.node-version }} | ✅ Passed |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| ${{ matrix.node-version }} | ❌ Failed |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "<details><summary>Click to view failure details</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            grep "not ok" test-output.txt -A 10 || echo "Check internal logs for full trace." >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "</details>" >> $GITHUB_STEP_SUMMARY
+          fi
