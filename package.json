@@ -34,6 +34,14 @@
   ],
   "author": "Amir-Benhadid",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Amir-Benhadid/medshield-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Amir-Benhadid/medshield-js/issues"
+  },
+  "homepage": "https://github.com/Amir-Benhadid/medshield-js#readme",
   "devDependencies": {
     "@types/node": "^25.6.0",
     "tsup": "^8.3.0",
