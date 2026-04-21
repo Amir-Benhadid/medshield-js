@@ -58,12 +58,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write # CRITICAL: This allows Trusted Publishing OIDC auth
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          registry-url: 'https://registry.npmjs.org'
       
       - name: Install dependencies
         run: npm install
@@ -71,7 +72,7 @@ jobs:
       - name: Build package
         run: npm run build
       
-      - name: Publish to NPM (Trusted Publishing)
-        # Note: No NPM_TOKEN or NODE_AUTH_TOKEN needed here!
-        # The id-token provides a temporary secure 2FA-bypass token to NPM.
+      - name: Publish to NPM
         run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
