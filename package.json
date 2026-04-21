@@ -10,11 +10,20 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsx --test test/*.test.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "privacy",
+    "healthcare",
+    "pii",
+    "phi",
+    "sanitization",
+    "hipaa",
+    "nlp",
+    "ai"
+  ],
+  "author": "MedShield-JS Team",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "^25.6.0",
     "tsx": "^4.21.0",
